@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace cogenNuGetService2.Class.HomePage
+namespace Service2.Class.HomePage
 {
     public class Service11
     {
