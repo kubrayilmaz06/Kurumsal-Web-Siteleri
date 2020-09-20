@@ -1,4 +1,4 @@
-﻿@model cogenNuGetService2.Models.HomePage.Service14
+﻿@model Service2.Models.HomePage.Service14
 @{
     string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
 }
@@ -6,7 +6,6 @@
 @if (Model != null)
 {
     <section class="service-14 py-5">
-        @*<div class="opacity position-absolute"></div>*@
         <div class="container">
             <div class="row">
                 @if (Model.listModel != null && Model.listModel.Count > 0)
@@ -53,14 +52,6 @@
                                             {
                                                 <h4 class="mt-4 mx-auto">@Model.listModel[i].cServiceName</h4>
                                             }
-
-                                            @*fiyat bilgisi çekilecek
-                                                    @if (!String.IsNullOrEmpty(Model.listModel[i].cServiceName))
-                                                {
-                                                    <h5 class="text-center">@Model.listModel[i].cServiceName</h5>
-                                                }*@
-
-
                                         </div>
                                     </div>
                                 </div>
