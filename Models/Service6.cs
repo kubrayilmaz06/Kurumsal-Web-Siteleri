@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace cogenNuGetService2.Models.HomePage
+namespace Service2.Models.HomePage
 {
     public class Service6
     {
