@@ -1,0 +1,105 @@
+﻿@model cogenNuGetService2.Models.HomePage.Service11
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+<!--http://t.commonsupport.com/intenax/-->
+@if (Model != null)
+{
+    <section class="service-11 py-5">
+        <div class="container">
+            <div class="row wow fadeInDownBig">
+                <div class="col-12 text-center">
+                    @if (!String.IsNullOrEmpty(Model.cSubTitle))
+                    {
+                        <div class="sub-title font-weight-bold mb-2">@Model.cSubTitle</div>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.cTitle))
+                    {
+                        <h4 class="text-dark font-weight-bold mb-5">@Model.cTitle</h4>
+                    }
+                </div>
+            </div>
+            <div class="row wow rotateInDownLeft">
+                @if (Model.listModel != null && Model.listModel.Count > 0)
+                {
+                    for (int i = 0; i < Model.listModel.Count; i++)
+                    {
+                        if (Model.listModel[i] != null)
+                        {
+                            if (i % 2 == 0)
+                            {
+                                <div class="col-lg-3 col-xl-3 col-md-6 col-sm-12 p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                            {
+                                                <div class="image" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                    <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="box-top bg-white text-center px-3 py-4">
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                {
+                                                    <div class="title text-dark font-weight-bold mb-4">@Model.listModel[i].cTitle</div>
+                                                }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                                {
+                                                    <p class="text-dark font-weight-normal mb-4">@Model.listModel[i].cDescription</p>
+                                                }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                {
+                                                    <a href="@Model.listModel[i].cUrl" class="hvr-sweep-to-right btn btn-light rounded-0" title="@Model.listModel[i].cTitle">Devamını Oku</a>
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-lg-3 col-xl-3 col-md-6 col-sm-12 p-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="box-bottom bg-white text-center px-3 py-4">
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                {
+                                                    <div class="title text-dark font-weight-bold mb-4">@Model.listModel[i].cTitle</div>
+                                                }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                                {
+                                                    <p class="text-dark font-weight-normal mb-4">@Model.listModel[i].cDescription</p>
+                                                }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                {
+                                                    <a href="@Model.listModel[i].cUrl" class="hvr-sweep-to-left btn btn-light rounded-0" title="@Model.listModel[i].cTitle">Devamını Oku</a>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                            {
+                                                <div class="image" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                    <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </section>
+}
