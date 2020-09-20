@@ -1,0 +1,120 @@
+﻿@model cogenNuGetNews.Models.HomePage.News29
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+@if (Model != null)
+{
+    <section class="news-29 bg-white py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    @if (!String.IsNullOrEmpty(Model.cTitle) && !String.IsNullOrEmpty(Model.cUrl))
+                    {
+                        <a href="@Model.cUrl" title="@Model.cTitle"><h1 class="text-dark font-weight-normal">@Model.cTitle</h1></a>
+                    }
+                </div>
+                <div class="col-12">
+                    <div class="image mx-auto mb-4" style="background-image:url('/Images/part10-2.png');">
+                        <img src="~/Images/part10-2.png" class="card-img-top" alt="" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    @if (!String.IsNullOrEmpty(Model.cDescription))
+                    {
+                        <p class="text-secondary font-weight-normal first-p p1">@Model.cDescription</p>
+                    }
+                </div>
+            </div>
+            <div class="row no-gutters p-0 mt-4">
+                @if (Model.listModel != null && Model.listModel.Count > 0)
+                {
+                    if (Model.listModel[0] != null)
+                    {
+                        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 m-0 p-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 m-0 p-0">
+                                    @if (!String.IsNullOrEmpty(Model.listModel[0].cImage) && Model.listModel[0].cImage != "/Images/resimyok.png")
+                                    {
+                                        <div class="image1" style="background-image:url(@Model.listModel[0].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                            <img src="@Model.listModel[0].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[0].cTitle" />
+                                        </div>
+                                    }
+                                </div>
+                                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 m-0 p-0">
+                                    <div class="card-body mx-5">
+                                        @if (!String.IsNullOrEmpty(Model.listModel[0].cTitle) && !String.IsNullOrEmpty(Model.listModel[0].cUrl))
+                                        {
+                                            <a href="@Model.cUrl"><h3 class="mb-0 text-secondary font-weight-normal">Nam nec tellus a odio</h3></a>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[0].cUrl))
+                                        {
+                                            <a href="@Model.listModel[0].cUrl" class="text-secondary">
+                                                <div class="mt-1 okunma">
+                                                    @Model.listModel[0].iOkunma
+                                                    Görüntülenme
+                                                </div>
+                                            </a>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[0].cDescription))
+                                        {
+                                            <p class="text-secondary font-weight-normal mt-1 p2">@Model.listModel[0].cDescription</p>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[0].cUrl))
+                                        {
+                                            <a href="@Model.listModel[0].cUrl" class="text-dark font-weight-normal">Detaylı Bilgi  <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 mt-2">
+                        @for (int i = 1; i < Model.listModel.Count; i++)
+                        {
+                            if (Model.listModel[i] != null)
+                            {
+                                <div class="row m-0 mb-5">
+                                    <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                        {
+                                            <div class="image3" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                            </div>
+                                        }
+                                    </div>
+                                    <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+                                        <div class="card-body p-0 mx-4 rigthcard">
+                                            @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle) && !String.IsNullOrEmpty(Model.listModel[i].cUrl))
+                                            {
+                                                <a href="#"><h3 class="mb-0 text-secondary font-weight-normal">Nam nec tellus a odio</h3></a>
+                                            }
+                                            @if (!String.IsNullOrEmpty(Model.listModel[i].cUrl))
+                                            {
+                                                <a href="@Model.listModel[i].cUrl" class="text-secondary">
+                                                    <div class="mt-1 okunma">
+                                                        @Model.listModel[i].iOkunma
+                                                        Görüntülenme
+                                                    </div>
+                                                </a>
+                                            }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                                {
+                                                    <p class="text-secondary font-weight-normal mt-1 p3">@Model.listModel[i].cDescription</p>
+                                                }
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cUrl))
+                                                {
+                                                    <a href="@Model.cUrl" class="text-dark font-weight-normal">Detaylı Bilgi  <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                                                }
+                                            </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
