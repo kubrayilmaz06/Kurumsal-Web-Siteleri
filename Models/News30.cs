@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace cogenNuGetNews.Models.HomePage
+namespace News.Models.HomePage
 {
     public class News30
     {
