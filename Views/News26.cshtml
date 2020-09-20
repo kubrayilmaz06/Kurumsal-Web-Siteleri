@@ -1,0 +1,74 @@
+﻿@model cogenNuGetNews.Models.HomePage.News26
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+@if (Model != null)
+{
+    <section class="news-26 bg-light py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    @if (!String.IsNullOrEmpty(Model.cSubTitle))
+                    {
+                        <h4 class="text-center text-success font-weight-normal pb-2">@Model.cSubTitle</h4>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.cUrl) && !String.IsNullOrEmpty(Model.cTitle))
+                    {
+                        <a href="@Model.cUrl"><h1 class="text-center text-dark font-weight-normal">@Model.cTitle</h1></a>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div id="owl-carousel-news-26" class="owl-carousel">
+                    @if (Model.listModel != null && Model.listModel.Count > 0)
+                    {
+                        for (int i = 0; i < Model.listModel.Count; i++)
+                        {
+                            if (Model.listModel[i] != null)
+                            {
+                                <div class="card border-0 rounded-top">
+                                    @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                    {
+                                        <div class="image rounded-top" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                            <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                        </div>
+                                    }
+                                    <div class="card-body bg-light text-center">
+                                        <div class="rounded-circle mx-auto bg-secondary p-3 mb-4">
+                                            @if (Model.listModel[i].dNewDate != null)
+                                            {
+                                                <p class="m-0">
+                                                    <span class="date-number text-success font-weight-normal">
+                                                        @Model.listModel[i].dNewDate.ToString("dd", System.Globalization.CultureInfo.CreateSpecificCulture("tr-TR"))
+                                                    </span>
+                                                </p>
+                                                <p class="m-0">
+                                                    <span class="date-mount text-dark font-weight-bold"> @Model.listModel[i].dNewDate.ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("tr-TR"))</span>
+                                                </p>
+
+                                            }
+                                        </div>
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle) && !String.IsNullOrEmpty(Model.listModel[i].cUrl))
+                                        {
+                                            <a href="@Model.listModel[i].cUrl"><h5 class="m-0 mb-3 text-dark font-weight-normal" title="Psychology Therapy">@Model.listModel[i].cTitle</h5></a>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                        {
+                                            <p class="card-text text-secondary m-0 mb-4">@Model.listModel[i].cDescription</p>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cUrl) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                        {
+                                            <a href="@Model.listModel[i].cUrl" title="@Model.listModel[i].cTitle" class="btn btn-light bg-light border-secondary font-weight-normal rounded-pill py-2 px-4">Detaylı Bilgi</a>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+}
