@@ -13,7 +13,7 @@ namespace Service2.Class.HomePage
             try
             {
                 Models.HomePage.Service3 service3 = new Models.HomePage.Service3();
-                using (Data.DCCogenNuGetContent dc = new Data.DCCogenNuGetContent())
+                using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
                                            where
