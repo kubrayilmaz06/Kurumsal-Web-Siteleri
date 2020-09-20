@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace cogenNugetContact.Class.General
+namespace Contact.Class.General
 {
     public class Contact21
     {
