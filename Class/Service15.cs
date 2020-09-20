@@ -15,7 +15,7 @@ namespace Service2.Class.HomePage
                 Models.HomePage.Service15 service = new Models.HomePage.Service15();
                 service.list = new List<Models.HomePage.Service15.List>();
 
-                using (Data.DCCogenNuGetContent dc = new Data.DCCogenNuGetContent())
+                using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultService = (from tableService in dc.Pages
                                          where
