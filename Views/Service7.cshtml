@@ -1,0 +1,61 @@
+﻿@model cogenNuGetService2.Models.HomePage.Service7
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+<!--http://t.commonsupport.com/intenax/-->
+@if (Model != null)
+{
+    <section class="service-7 py-5 bg-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-xl-5 col-md-12 col-sm-12 px-0">
+                    <div class="row wow fadeInLeft">
+                        <div class="col-lg-2 col-xl-2 col-md-1 col-sm-1 px-0"></div>
+                        <div class="col-lg-8 col-xl-8 col-md-10 col-sm-10 px-0">
+                            @if (!String.IsNullOrEmpty(Model.cSubTitle))
+                            {
+                                <div class="sub-title font-weight-bold mb-3">@Model.cSubTitle</div>
+                            }
+                            @if (!String.IsNullOrEmpty(Model.cTitle))
+                            {
+                                <h2 class="text-dark font-weight-bold">@Model.cTitle</h2>
+                            }
+                            @if (!String.IsNullOrEmpty(Model.cDescription))
+                            {
+                                <p class="text-dark description font-weight-normal mt-5">@Model.cDescription</p>
+                            }
+                        </div>
+                        <div class="col-lg-2 col-xl-2 col-md-1 col-sm-1 px-0"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-xl-7 col-md-12 col-sm-12 px-0 wow fadeInRight">
+                    <div id="owl-carousel-service-7" class="owl-carousel">
+                        @if (Model.listModel != null && Model.listModel.Count > 0)
+                        {
+                            for (int i = 0; i < Model.listModel.Count; i++)
+                            {
+                                if (Model.listModel[i] != null)
+                                {
+                                    <div class="">
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                        {
+                                            <div class="image position-relative" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                                <div class="opacity2 position-absolute"></div>
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                {
+                                                    <h3 class="text-white font-weight-bold text-center position-relative">@Model.listModel[i].cTitle</h3>
+                                                }
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                    <div class="opacity"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
