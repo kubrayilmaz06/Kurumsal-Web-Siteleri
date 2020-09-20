@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using cogenNuGetNews.Models.HomePage;
+using News.Models.HomePage;
 
-namespace cogenNuGetNews.Class.HomePage
+namespace News.Class.HomePage
 {
     public class News25 
     {
