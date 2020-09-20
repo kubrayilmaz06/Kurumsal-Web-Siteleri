@@ -1,0 +1,63 @@
+﻿@model cogenNuGetService2.Models.HomePage.Service2
+
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+
+@if (Model != null)
+{
+    <section class="service-2 bg-white py-5">
+        <div class="container p-5">
+            <div class="row text-center wow fadeInDown">
+                <div class="col-12">
+                    @if (!String.IsNullOrEmpty(Model.cSubTitle))
+                    {
+                        <h4 class="text-success font-weight-normal pb-1">@Model.cSubTitle</h4>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.cTitle))
+                    {
+                      <h1 class="text-dark font-weight-bold pb-3">@Model.cTitle</h1>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.cDescription))
+                    {
+                        <p class="text-secondary font-weight-normal mb-5"> @Model.cDescription </p>
+                    }
+                </div>
+            </div>
+            <div class="row mb-0 wow fadeInUp">
+                @if (Model.listModel != null && Model.listModel.Count > 0)
+                {
+                    for (int i = 0; i < Model.listModel.Count; i++)
+                    {
+                        if (Model.listModel[i] != null)
+                        {
+                            <div class="col-lg-4 col-xl-4 col-md-12 col-sm-12 mb-sm-5 mb-md-5">
+                                <div class="card text-center border-0 rounded-0">
+                                    <div class="card-body p-0">
+                                        <div class="mx-auto rounded-circle bg-light wow swing">
+                                            @if (!String.IsNullOrEmpty(Model.listModel[i].cIcon) && Model.listModel[i].cIcon != "/Images/resimyok.png")
+                                            {
+                                                <div class="image" style="background-image:url(@Model.listModel[i].cIcon.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                    <img src="@Model.listModel[i].cIcon.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                                </div>
+                                                <div class="mx-auto rounded-circle bg-success">@(i + 1)</div>
+                                            }
+                                        </div>
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle) && !String.IsNullOrEmpty(Model.listModel[i].cUrl))
+                                        {
+                                            <a href="@Model.listModel[i].cUrl" class="text-dark font-weight-bold" title="@Model.listModel[i].cTitle"><h5 class="card-title">@Model.listModel[i].cTitle</h5></a>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                        {
+                                            <p class="card-text text-secondary font-weight-normal mb-0">@Model.listModel[i].cDescription</p>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+    </section>
+}
