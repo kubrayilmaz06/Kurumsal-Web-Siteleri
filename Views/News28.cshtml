@@ -1,0 +1,64 @@
+﻿@model cogenNuGetNews.Models.HomePage.News28
+@{
+    string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
+}
+@if (Model != null)
+{
+    <section class="news-28 py-5 bg-white">
+        <div class="container-fluid">
+            <div class="row text-center bg-dark">
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 my-auto p-sm-5 p-md-5">
+                    @if (!String.IsNullOrEmpty(Model.cSubTitle))
+                    {
+                        <h4 class="text-success font-weight-normal">@Model.cSubTitle</h4>
+                    }
+                    @if (!String.IsNullOrEmpty(Model.cTitle) && !String.IsNullOrEmpty(Model.cUrl))
+                    {
+                        <a href="@Model.cUrl"><h1 class="text-white font-weight-normal mb-5">@Model.cTitle</h1></a>
+                    }
+
+                    <div id="owl-carousel-news-28" class="owl-carousel">
+                        @if (Model.listModel != null && Model.listModel.Count > 0)
+                        {
+                            for (int i = 0; i < Model.listModel.Count; i++)
+                            {
+                                if (Model.listModel[i] != null)
+                                {
+                                    <div class="item">
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
+                                        {
+                                            <div class="image2 rounded-circle mx-auto mb-5" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                                <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
+                                            </div>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription))
+                                        {
+                                            <p class="text-white font-weight-normal mx-5 mb-5"> @Model.listModel[i].cDescription</p>
+                                        }
+                                        @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                        {
+                                            <p class="text-success font-weight-normal" id="p1">@Model.listModel[i].cTitle</p>
+                                        }
+
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 pr-0 pl-sm-0 pl-md-0">
+                    @if (!String.IsNullOrEmpty(Model.cImage) && !String.IsNullOrEmpty(Model.cTitle))
+                    {
+                        <div class="image" style="background-image:url(@Model.cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                            <img src="@Model.cImage.Replace("/Thumbnail","").Replace(cResimOnEki,"ImagesStore")" class="card-img-top" alt="@Model.cTitle" />
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
