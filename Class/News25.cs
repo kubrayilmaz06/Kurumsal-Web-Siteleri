@@ -14,7 +14,7 @@ namespace News.Class.HomePage
             try
             {
                 Models.HomePage.News25 news25 = new Models.HomePage.News25();
-                using (Data.DCCogenNugetContent dc = new Data.DCCogenNugetContent())
+                using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
                                            where
