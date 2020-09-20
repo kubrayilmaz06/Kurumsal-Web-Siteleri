@@ -1,4 +1,4 @@
-﻿@model cogenNuGetService2.Models.HomePage.Service15
+﻿@model Service2.Models.HomePage.Service15
 @{
     string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
 }
@@ -8,8 +8,7 @@
     <section class="service-15">
         <div class="container">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
+                <div class="col-md-10 offset-2">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             @for (int i = 0; i < Model.list.Count; i++)
@@ -98,7 +97,6 @@
                         }
                     </div>
                 </div>
-                <div class="col-md-1"></div>
             </div>
         </div>
     </section>
