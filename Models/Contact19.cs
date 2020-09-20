@@ -1,4 +1,4 @@
-﻿namespace cogenNugetContact.Models.General
+﻿namespace Contact.Models.General
 {
     public class Contact19
     {
