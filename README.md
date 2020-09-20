@@ -66,4 +66,4 @@ http://www.bamaxaritma.com/
 
 # Kullanılan Teknolojiler
 
-Bu proje C# dilinde MVC, ASP.NET,LINQ , Bootstrap teknolojisi ile geliştirilmiştir. Bunun yanı sıra JavaScript dili kullanılmıştır. Veri tabanı olarak MSSQL(Microsoft SQL Server) kullanılmıştır.
+Bu projeler C# dilinde MVC, ASP.NET, LINQ ve Bootstrap teknolojileri ile geliştirilmiştir. Bunun yanı sıra JavaScript dili kullanılmıştır. Veri tabanı olarak MSSQL(Microsoft SQL Server) kullanılmıştır.
