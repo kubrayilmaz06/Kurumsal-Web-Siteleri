@@ -4,6 +4,8 @@
 
 # Tamamladığım Projeler
 
+Arayüzlerini hazırladığım projeler.
+
 https://www.cogen.com.tr/
 
 http://www.ozkanlarlazer.com/
