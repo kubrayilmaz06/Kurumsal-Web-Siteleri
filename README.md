@@ -8,6 +8,8 @@ Arayüzlerini hazırladığım projeler.
 
 https://www.cogen.com.tr/
 
+http://genesis1.kimyask.com/tr
+
 http://www.ozkanlarlazer.com/
 
 http://www.imporium.com.tr/
