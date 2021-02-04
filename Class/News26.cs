@@ -67,7 +67,7 @@ namespace News.Class.HomePage
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
-                                    news26ListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
