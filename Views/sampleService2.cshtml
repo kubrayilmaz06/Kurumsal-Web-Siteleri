@@ -26,14 +26,14 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-xl-7 col-md-12 col-sm-12 px-0 wow fadeInRight">
-                    <div id="owl-carousel-service-7" class="owl-carousel">
+                    <div id="owl-carousel" class="owl-carousel">
                         @if (Model.listModel != null && Model.listModel.Count > 0)
                         {
                             for (int i = 0; i < Model.listModel.Count; i++)
                             {
                                 if (Model.listModel[i] != null)
                                 {
-                                    <div class="">
+                                    <div class="image">
                                         @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
                                         {
                                             <div class="image position-relative" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
