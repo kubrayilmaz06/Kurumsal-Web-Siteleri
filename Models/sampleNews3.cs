@@ -19,7 +19,7 @@ namespace News.Models.HomePage
             public string cTitle { get; set; }
             public string cDescription { get; set; }
             public string cUrl { get; set; }
-            public int iOkunma { get; set; }
+            public int iRead { get; set; }
 
         }
     }
