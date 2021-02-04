@@ -7,13 +7,13 @@ using News.Models.HomePage;
 
 namespace News.Class.HomePage
 {
-    public class News25 
+    public class News 
     {
-        public Models.HomePage.News25 Send()
+        public Models.HomePage.News Send()
         {
             try
             {
-                Models.HomePage.News25 news25 = new Models.HomePage.News25();
+                Models.HomePage.News news = new Models.HomePage.News();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
