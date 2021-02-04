@@ -4,7 +4,7 @@
 
 # Tamamladığım Projeler
 
-Arayüzlerini hazırladığım projeler.
+Arayüzlerini kodladığım projeler.
 
 https://www.cogen.com.tr/
 
