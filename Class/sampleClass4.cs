@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Service2.Class.HomePage
+namespace Service.Class.HomePage
 {
-    public class Service15
+    public class Service
     {
-        public Models.HomePage.Service15 Send()
+        public Models.HomePage.Service Send()
         {
             try
             {
-                Models.HomePage.Service15 service = new Models.HomePage.Service15();
-                service.list = new List<Models.HomePage.Service15.List>();
+                Models.HomePage.Service service = new Models.HomePage.Service();
+                service.list = new List<Models.HomePage.Service.List>();
 
                 using (Data.DCContent dc = new Data.DCContent())
                 {
