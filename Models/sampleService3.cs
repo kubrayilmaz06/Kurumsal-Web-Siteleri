@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Service2.Models.HomePage
+namespace Service.Models.HomePage
 {
-    public class Service14
+    public class Service
     {
         public string cTitle { get; set; }
         public List<ListModel> listModel { get; set; }
@@ -11,7 +11,7 @@ namespace Service2.Models.HomePage
         {
             public string cTitle { get; set; }
             public string cImage { get; set; }
-            public string cFiyat { get; set; }
+            public string cPrice { get; set; }
             public string cUrl { get; set; }
             public string cServiceName { get; set; }
 
