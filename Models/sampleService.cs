@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace Service2.Models.HomePage
+namespace Service.Models.HomePage
 {
-    public class Service6
+    public class Service
     {
         public string cSubTitle { get; set; }
         public string cTitle { get; set; }
