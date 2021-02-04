@@ -5,7 +5,7 @@ using System.Web;
 
 namespace News.Models.HomePage
 {
-    public class News24
+    public class News
     {
         public string cTitle { get; set; }
         public string cDescription { get; set; }
