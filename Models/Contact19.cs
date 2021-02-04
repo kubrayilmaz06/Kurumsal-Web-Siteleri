@@ -1,6 +1,6 @@
 ﻿namespace Contact.Models.General
 {
-    public class Contact19
+    public class Contact
     {
         public string cCompanyName { get; set; }
         public string cPhone { get; set; }
