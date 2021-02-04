@@ -39,21 +39,21 @@ namespace News.Class.HomePage
                             {
                                 Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cPageImage))
                                 {
-                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cPageImage;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
                                     newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cDescription))
                                 {
-                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cDescription;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cUrl))
                                 {
-                                    newsListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cUrl;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
@@ -62,10 +62,6 @@ namespace News.Class.HomePage
                                 if (resultPageList[i].iCount != null)
                                 {
                                     newsListModel.iRead = Convert.ToInt32(resultPageList[i].iCount);
-                                }
-                                if (!String.IsNullOrEmpty(resultNews.cTitle))
-                                {
-                                    newsListModel.cKategori = resultNews.cTitle;
                                 }
 
                                 news.listModel.Add(newsListModel);
