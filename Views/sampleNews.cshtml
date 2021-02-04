@@ -45,7 +45,6 @@
                                                 <p class="m-0">
                                                     <span class="date-mount text-dark font-weight-bold"> @Model.listModel[i].dNewDate.ToString("MMMM", System.Globalization.CultureInfo.CreateSpecificCulture("tr-TR"))</span>
                                                 </p>
-
                                             }
                                         </div>
                                         @if (!String.IsNullOrEmpty(Model.listModel[i].cTitle) && !String.IsNullOrEmpty(Model.listModel[i].cUrl))
@@ -66,9 +65,7 @@
                         }
                     }
                 </div>
-
             </div>
         </div>
     </section>
-
 }
