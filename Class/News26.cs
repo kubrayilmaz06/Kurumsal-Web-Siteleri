@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace News.Class.HomePage
 {
-    public class News26 
+    public class News 
     {
-        public Models.HomePage.News26 Send()
+        public Models.HomePage.News Send()
         {
             try
             {
-                Models.HomePage.News26 news26 = new Models.HomePage.News26();
+                Models.HomePage.News news = new Models.HomePage.News();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
@@ -39,15 +39,15 @@ namespace News.Class.HomePage
                     {
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
-                            news26.cSubTitle = resultCustomers.cCustomerFooter;
+                            news.cSubTitle = resultCustomers.cCustomerFooter;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cSeo))
                         {
-                            news26.cUrl = resultNews.cSeo;
+                            news.cUrl = resultNews.cSeo;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cTitle))
                         {
-                            news26.cTitle = resultNews.cTitle;
+                            news.cTitle = resultNews.cTitle;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -59,11 +59,11 @@ namespace News.Class.HomePage
 
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            news26.listModel = new List<Models.HomePage.News26.ListModel>();
+                            news.listModel = new List<Models.HomePage.News.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.News26.ListModel news26ListModel = new Models.HomePage.News26.ListModel();
+                                Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
@@ -71,27 +71,27 @@ namespace News.Class.HomePage
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
-                                    news26ListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
+                                    newsListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    news26ListModel.cTitle = resultPageList[i].cTitle;
+                                    newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    news26ListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    news26ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
 
-                                news26.listModel.Add(news26ListModel);
+                                news.listModel.Add(newsListModel);
                             }
                         }
                     }
                 }
-                return news26;
+                return news;
             }
             catch
             {
