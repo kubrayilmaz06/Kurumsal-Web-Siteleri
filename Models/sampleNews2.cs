@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace News.Models.HomePage
 {
-    public class News27
+    public class News
     {
         public string cSubTitle { get; set; }
         public string cTitle { get; set; }
