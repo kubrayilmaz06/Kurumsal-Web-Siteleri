@@ -29,13 +29,13 @@ namespace News.Class.HomePage
                         {
                             news.cTitle = resultNews.cTitle;
                         }
-                        if (!String.IsNullOrEmpty(resultNews.cPageDescription))
+                        if (!String.IsNullOrEmpty(resultNews.cDescription))
                         {
-                            news.cDescription = resultNews.cPageDescription;
+                            news.cDescription = resultNews.cDescription;
                         }
-                        if (!String.IsNullOrEmpty(resultNews.cSeo))
+                        if (!String.IsNullOrEmpty(resultNews.cUrl))
                         {
-                            news.cUrl = resultNews.cSeo;
+                            news.cUrl = resultNews.cUrl;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -52,21 +52,21 @@ namespace News.Class.HomePage
                             {
                                 Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cPageImage))
                                 {
-                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cPageImage;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
                                     newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cDescription))
                                 {
-                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cDescription;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cUrl))
                                 {
-                                    newsListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cUrl;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
