@@ -3,13 +3,13 @@ using System.Linq;
 
 namespace Contact.Class.General
 {
-    public class Contact21
+    public class Contact
     {
-        public Models.General.Contact21 Send()
+        public Models.General.Contact Send()
         {
             try
             {
-                Models.General.Contact21 contact = new Models.General.Contact21();
+                Models.General.Contact contact = new Models.General.Contact();
 
                 using (Data.DCContent dc = new Data.DCContent())
                 {
