@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Service2.Class.HomePage
+namespace Service.Class.HomePage
 {
-    public class Service11
+    public class Service
     {
-        public Models.HomePage.Service11 Send()
+        public Models.HomePage.Service Send()
         {
             try
             {
-                Models.HomePage.Service11 service11 = new Models.HomePage.Service11();
+                Models.HomePage.Service service = new Models.HomePage.Service();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
@@ -33,12 +33,12 @@ namespace Service2.Class.HomePage
 
                         if (!String.IsNullOrEmpty(resultPage.cTitle))
                         {
-                            service11.cTitle = resultPage.cTitle;
+                            service.cTitle = resultPage.cTitle;
                         }
 
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
-                            service11.cSubTitle = resultCustomers.cCustomerFooter;
+                            service.cSubTitle = resultCustomers.cCustomerFooter;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -49,34 +49,34 @@ namespace Service2.Class.HomePage
                                               select table).Skip(0).Take(4).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            service11.listModel = new List<Models.HomePage.Service11.ListModel>();
+                            service.listModel = new List<Models.HomePage.Service.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.Service11.ListModel Service11ListModel = new Models.HomePage.Service11.ListModel();
+                                Models.HomePage.Service.ListModel ServiceListModel = new Models.HomePage.Service.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
-                                    Service11ListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    ServiceListModel.cImage = resultPageList[i].cSayfaResmi;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    Service11ListModel.cTitle = resultPageList[i].cTitle;
+                                    ServiceListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    Service11ListModel.cUrl = resultPageList[i].cSeo;
+                                    ServiceListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    Service11ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    ServiceListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
-                                service11.listModel.Add(Service11ListModel);
+                                service.listModel.Add(ServiceListModel);
                             }
                         }
                     }
                 }
-                return service11;
+                return service;
             }
 
             catch
