@@ -35,7 +35,7 @@ namespace News.Class.HomePage
                                         tableBlog.iCodePages == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeBlog"])
                                       select tableBlog).FirstOrDefault();
 
-                    if (resultNews != null && resultNews != null)
+                    if (resultNews != null && resultBlog != null)
                     {
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
@@ -100,3 +100,5 @@ namespace News.Class.HomePage
         }
     }
 }
+
+
