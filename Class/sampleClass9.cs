@@ -27,15 +27,15 @@ namespace News.Class.HomePage
 
                         if (!String.IsNullOrEmpty(resultNews.cTitle))
                         {
-                            news24.cTitle = resultNews.cTitle;
+                            news.cTitle = resultNews.cTitle;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cPageDescription))
                         {
-                            news24.cDescription = resultNews.cPageDescription;
+                            news.cDescription = resultNews.cPageDescription;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cSeo))
                         {
-                            news24.cUrl = resultNews.cSeo;
+                            news.cUrl = resultNews.cSeo;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -46,43 +46,43 @@ namespace News.Class.HomePage
                                               select table).Skip(0).Take(3).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            news24.listModel = new List<Models.HomePage.News24.ListModel>();
+                            news.listModel = new List<Models.HomePage.News.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.News24.ListModel news24ListModel = new Models.HomePage.News24.ListModel();
+                                Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
-                                    news24ListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    news24ListModel.cTitle = resultPageList[i].cTitle;
+                                    newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    news24ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    news24ListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
-                                    news24ListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
+                                    newsListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
                                 }
                                 if (resultPageList[i].iCount != null)
                                 {
-                                    news24ListModel.iOkunma = Convert.ToInt32(resultPageList[i].iCount);
+                                    newsListModel.iRead = Convert.ToInt32(resultPageList[i].iCount);
                                 }
 
-                                news24.listModel.Add(news24ListModel);
+                                news.listModel.Add(newsListModel);
                             }
                         }
                     }
                 }
-                    return news24;
+                    return news;
             }
             catch
             {
