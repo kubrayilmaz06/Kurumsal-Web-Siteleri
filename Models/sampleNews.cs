@@ -17,8 +17,8 @@ namespace News.Models.HomePage
             public string cUrl { get; set; }
             public string cImage { get; set; }
             public string cDescription { get; set; }
-            public int iOkunma { get; set; }
-            public string cKategori { get; set; }
+            public int iRead { get; set; }
+            public string cCategory { get; set; }
             public DateTime dNewDate { get; set; }
         }
     }
