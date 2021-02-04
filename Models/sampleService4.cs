@@ -15,7 +15,6 @@ namespace Service.Models.HomePage
             public string cSubTitle { get; set; }
             public string cUrl { get; set; }
             public string cDescription { get; set; }
-
         }
     }
 }
