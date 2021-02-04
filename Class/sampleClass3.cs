@@ -31,19 +31,19 @@ namespace Service.Class.HomePage
                     {
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
-                            service2.cSubTitle = resultCustomers.cCustomerFooter;
+                            service.cSubTitle = resultCustomers.cCustomerFooter;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cTitle))
                         {
-                            service2.cTitle = resultPage.cTitle;
+                            service.cTitle = resultPage.cTitle;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cPageDescription))
                         {
-                            service2.cDescription = resultPage.cPageDescription;
+                            service.cDescription = resultPage.cPageDescription;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cSeo))
                         {
-                            service2.cUrl = resultPage.cSeo;
+                            service.cUrl = resultPage.cSeo;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -54,35 +54,35 @@ namespace Service.Class.HomePage
                                               select table).Skip(0).Take(3).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            service2.listModel = new List<Models.HomePage.Service2.ListModel>();
+                            service.listModel = new List<Models.HomePage.Service.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.Service2.ListModel Service2ListModel = new Models.HomePage.Service2.ListModel();
+                                Models.HomePage.Service.ListModel ServiceListModel = new Models.HomePage.Service.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    Service2ListModel.cTitle = resultPageList[i].cTitle;
+                                    ServiceListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    Service2ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    ServiceListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    Service2ListModel.cUrl = resultPageList[i].cSeo;
+                                    ServiceListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cIcon))
                                 {
-                                    Service2ListModel.cIcon = resultPageList[i].cIcon;
+                                    ServiceListModel.cIcon = resultPageList[i].cIcon;
                                 }
 
-                                service2.listModel.Add(Service2ListModel);
+                                service.listModel.Add(ServiceListModel);
                             }
                         }
                     }
                 }
-                return service2;
+                return service;
             }
 
             catch
