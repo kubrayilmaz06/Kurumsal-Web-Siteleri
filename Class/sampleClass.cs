@@ -28,23 +28,23 @@ namespace Contact.Class.General
 
                     if (resultCustomers != null && resultContacts != null)
                     {
-                        contact.cCompanyName = resultCustomers.cCustomerFooter;
-                        contact.cPhone = resultContacts.cTelephone;
-                        contact.cGsm = resultContacts.cGSM;
-                        contact.cFax = resultContacts.cFaks;
-                        contact.cAdress = resultContacts.cAddress;
-                        contact.cEmailAdress = resultContacts.cEMail;
-                        contact.cFacebookURL = resultContacts.cFacebook;
-                        contact.cTwitterURL = resultContacts.cTwitter;
-                        contact.cGooglePlusURL = resultContacts.cGooglePlus;
-                        contact.cYoutubeURL = resultContacts.cYoutube;
-                        contact.cInstagramURL = resultContacts.cInstagram;
-                        contact.cLinkedinURL = resultContacts.cLinkedin;
-                        contact.cFoursquareURL = resultContacts.cFoursquare;
-                        contact.cPinterestURL = resultContacts.cPinterest;
+                        contact.cCompanyName = resultCustomers.cCompanyName;
+                        contact.cPhone = resultContacts.cPhone;
+                        contact.cGsm = resultContacts.cGsm;
+                        contact.cFax = resultContacts.cFax;
+                        contact.cAdress = resultContacts.cAdress;
+                        contact.cEmail = resultContacts.cEMail;
+                        contact.cFacebookUrl = resultContacts.cFacebook;
+                        contact.cTwitterUrl = resultContacts.cTwitter;
+                        contact.cGooglePlusUrl = resultContacts.cGooglePlus;
+                        contact.cYoutubeUrl = resultContacts.cYoutube;
+                        contact.cInstagramUrl = resultContacts.cInstagram;
+                        contact.cLinkedinUrl = resultContacts.cLinkedin;
+                        contact.cFoursquareUrl = resultContacts.cFoursquare;
+                        contact.cPinterestUrl = resultContacts.cPinterest;
                         contact.cLongitude = resultContacts.cLongitude;
                         contact.cLatitude = resultContacts.cLatitude;
-                        contact.cGoogleMapsLink = resultContacts.cGoogleMapsText;
+                        contact.cGoogleMapsLink = resultContacts.cGoogleMaps;
                         contact.cWhatsApp = resultContacts.cWhatsApp;
                     }
                 }
