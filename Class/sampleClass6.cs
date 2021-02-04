@@ -12,7 +12,7 @@ namespace News.Class.HomePage
         {
             try
             {
-                Models.HomePage.News30 news30 = new Models.HomePage.News30();
+                Models.HomePage.News news = new Models.HomePage.News();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultNews = (from tableNews in dc.Pages
@@ -33,47 +33,47 @@ namespace News.Class.HomePage
                                               select table).Skip(0).Take(5).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            news30.listModel = new List<Models.HomePage.News30.ListModel>();
+                            news.listModel = new List<Models.HomePage.News.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.News30.ListModel news30ListModel = new Models.HomePage.News30.ListModel();
+                                Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
-                                    news30ListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    news30ListModel.cTitle = resultPageList[i].cTitle;
+                                    newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    news30ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    news30ListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
-                                    news30ListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
+                                    newsListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
                                 }
                                 if (resultPageList[i].iCount != null)
                                 {
-                                    news30ListModel.iOkunma = Convert.ToInt32(resultPageList[i].iCount);
+                                    newsListModel.iRead = Convert.ToInt32(resultPageList[i].iCount);
                                 }
                                 if (!String.IsNullOrEmpty(resultNews.cTitle))
                                 {
-                                    news30ListModel.cKategori = resultNews.cTitle;
+                                    newsListModel.cKategori = resultNews.cTitle;
                                 }
 
-                                news30.listModel.Add(news30ListModel);
+                                news.listModel.Add(newsListModel);
                             }
                         }
                     }
                 }
-                return news30;
+                return news;
             }
             catch
             {
