@@ -1,10 +1,10 @@
-﻿@model News.Models.HomePage.News28
+﻿@model News.Models.HomePage.News
 @{
     string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
 }
 @if (Model != null)
 {
-    <section class="news-28 py-5 bg-white">
+    <section class="py-5 bg-white">
         <div class="container-fluid">
             <div class="row text-center bg-dark">
                 <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12 my-auto p-sm-5 p-md-5">
@@ -17,7 +17,7 @@
                         <a href="@Model.cUrl"><h1 class="text-white font-weight-normal mb-5">@Model.cTitle</h1></a>
                     }
 
-                    <div id="owl-carousel-news-28" class="owl-carousel">
+                    <div id="owl-carousel" class="owl-carousel">
                         @if (Model.listModel != null && Model.listModel.Count > 0)
                         {
                             for (int i = 0; i < Model.listModel.Count; i++)
@@ -27,7 +27,7 @@
                                     <div class="item">
                                         @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
                                         {
-                                            <div class="image2 rounded-circle mx-auto mb-5" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
+                                            <div class="image rounded-circle mx-auto mb-5" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
                                                 <img src="@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore")" alt="@Model.listModel[i].cTitle" />
                                             </div>
                                         }
