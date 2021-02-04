@@ -1,10 +1,10 @@
-﻿@model News.Models.HomePage.News26
+﻿@model News.Models.HomePage.News
 @{
     string cResimOnEki = "Files/WebSite_" + Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]);
 }
 @if (Model != null)
 {
-    <section class="news-26 bg-light py-5">
+    <section class="bg-light py-5">
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-12">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row">
-                <div id="owl-carousel-news-26" class="owl-carousel">
+                <div id="owl-carousel" class="owl-carousel">
                     @if (Model.listModel != null && Model.listModel.Count > 0)
                     {
                         for (int i = 0; i < Model.listModel.Count; i++)
