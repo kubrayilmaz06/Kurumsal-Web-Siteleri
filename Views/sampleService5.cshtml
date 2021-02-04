@@ -32,24 +32,24 @@
                                 <div class="tab-pane fade show active" id="nav-@i" role="tabpanel" aria-labelledby="nav-home-tab">
                                     <div class="row">
 
-                                        @for (int k = 0; k < Model.list[i].UrunListesi.Count; k++)
+                                        @for (int k = 0; k < Model.list[i].ProductList.Count; k++)
                                         {
-                                            if (Model.list[i].UrunListesi != null)
+                                            if (Model.list[i].ProductList != null)
                                             {
                                                 <div class="col-md-4">
                                                     <div class="card border-0">
                                                         <div class="opacity position-absolute"></div>
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cImagePad))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cImagePad))
                                                         {
-                                                            <div class="image" style="background-image:url(@Model.list[i].UrunListesi[k].cImagePad.Replace(cResimOnEki, "ImagesStore")) ">
-                                                                <img src="@Model.list[i].UrunListesi[k].cImagePad.Replace(cResimOnEki, "ImagesStore")" alt="@Model.list[i].cServiceName" />
+                                                            <div class="image" style="background-image:url(@Model.list[i].ProductList[k].cImagePad.Replace(cResimOnEki, "ImagesStore")) ">
+                                                                <img src="@Model.list[i].ProductList[k].cImagePad.Replace(cResimOnEki, "ImagesStore")" alt="@Model.list[i].cServiceName" />
                                                             </div>
                                                         }
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cServiceName))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cServiceName))
                                                         {
-                                                            <h4 class="mt-4 text-center">@Model.list[i].UrunListesi[k].cServiceName</h4>
+                                                            <h4 class="mt-4 text-center">@Model.list[i].ProductList[k].cServiceName</h4>
                                                         }
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cURL))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cURL))
                                                         {
                                                             <a class="border border-dark mb-5">Detaylı Bilgi</a>
                                                         }
@@ -65,24 +65,24 @@
                             {
                                 <div class="tab-pane fade" id="nav-@i" role="tabpanel" aria-labelledby="nav-@i-tab">
                                     <div class="row">
-                                        @for (int k = 0; k < Model.list[i].UrunListesi.Count; k++)
+                                        @for (int k = 0; k < Model.list[i].ProductList.Count; k++)
                                         {
-                                            if (Model.list[i].UrunListesi != null)
+                                            if (Model.list[i].Productlist != null)
                                             {
                                                 <div class="col-md-4">
                                                     <div class="card border-0">
                                                         <div class="opacity position-absolute"></div>
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cImagePad))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cImagePad))
                                                         {
-                                                            <div class="image" style="background-image:url(@Model.list[i].UrunListesi[k].cImagePad.Replace(cResimOnEki, "ImagesStore")) ">
-                                                                <img src="@Model.list[i].UrunListesi[k].cImagePad.Replace(cResimOnEki, "ImagesStore")" alt="@Model.list[i].cServiceName" />
+                                                            <div class="image" style="background-image:url(@Model.list[i].ProductList[k].cImagePad.Replace(cResimOnEki, "ImagesStore")) ">
+                                                                <img src="@Model.list[i].ProductList[k].cImagePad.Replace(cResimOnEki, "ImagesStore")" alt="@Model.list[i].cServiceName" />
                                                             </div>
                                                         }
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cServiceName))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cServiceName))
                                                         {
-                                                            <h4 class="mt-4 text-center">@Model.list[i].UrunListesi[k].cServiceName</h4>
+                                                            <h4 class="mt-4 text-center">@Model.list[i].ProductList[k].cServiceName</h4>
                                                         }
-                                                        @if (!String.IsNullOrEmpty(Model.list[i].UrunListesi[k].cURL))
+                                                        @if (!String.IsNullOrEmpty(Model.list[i].ProductList[k].cURL))
                                                         {
                                                             <a class="border border-dark mb-5">Detaylı Bilgi</a>
                                                             <button type="button" class="btn btn-outline-dark">Detaylı Bilgi</button>
