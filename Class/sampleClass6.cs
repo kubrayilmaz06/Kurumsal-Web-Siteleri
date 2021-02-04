@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace News.Class.HomePage
 {
-    public class News30
+    public class News
     {
-        public Models.HomePage.News30 Send()
+        public Models.HomePage.News Send()
         {
             try
             {
