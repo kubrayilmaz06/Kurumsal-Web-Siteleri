@@ -18,6 +18,5 @@ namespace Service.Models.HomePage
             public string cUrl { get; set; }
             public string cIcon { get; set; }
         }
-  
     }
 }
