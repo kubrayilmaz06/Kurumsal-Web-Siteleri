@@ -4,15 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Service2.Class.HomePage
+namespace Service.Class.HomePage
 {
-    public class Service3 
+    public class Service
     {
-        public Models.HomePage.Service3 Send()
+        public Models.HomePage.Service Send()
         {
             try
             {
-                Models.HomePage.Service3 service3 = new Models.HomePage.Service3();
+                Models.HomePage.Service service = new Models.HomePage.Service();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
@@ -32,23 +32,23 @@ namespace Service2.Class.HomePage
                     {
                         if (!String.IsNullOrEmpty(resultPage.cArkaPlan))
                         {
-                            service3.cArkaPlan = resultPage.cArkaPlan;
+                            service.cArkaPlan = resultPage.cArkaPlan;
                         }
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
-                            service3.cSubTitle = resultCustomers.cCustomerFooter;
+                            service.cSubTitle = resultCustomers.cCustomerFooter;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cTitle))
                         {
-                            service3.cTitle = resultPage.cTitle;
+                            service.cTitle = resultPage.cTitle;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cPageDescription))
                         {
-                            service3.cDescription = resultPage.cPageDescription;
+                            service.cDescription = resultPage.cPageDescription;
                         }
                         if (!String.IsNullOrEmpty(resultPage.cSeo))
                         {
-                            service3.cUrl = resultPage.cSeo;
+                            service.cUrl = resultPage.cSeo;
                         }
                       
 
@@ -60,35 +60,35 @@ namespace Service2.Class.HomePage
                                               select table).Skip(0).Take(4).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            service3.listModel = new List<Models.HomePage.Service3.ListModel>();
+                            service.listModel = new List<Models.HomePage.Service.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.Service3.ListModel Service3ListModel = new Models.HomePage.Service3.ListModel();
+                                Models.HomePage.Service.ListModel ServiceListModel = new Models.HomePage.Service.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    Service3ListModel.cTitle = resultPageList[i].cTitle;
+                                    ServiceListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    Service3ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    ServiceListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    Service3ListModel.cUrl = resultPageList[i].cSeo;
+                                    ServiceListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cIcon))
                                 {
-                                    Service3ListModel.cIcon = resultPageList[i].cIcon;
+                                    ServiceListModel.cIcon = resultPageList[i].cIcon;
                                 }
 
-                                service3.listModel.Add(Service3ListModel);
+                                service.listModel.Add(ServiceListModel);
                             }
                         }
                     }
                 }
-                return service3;
+                return service;
             }
 
             catch
