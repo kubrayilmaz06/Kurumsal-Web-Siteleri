@@ -15,7 +15,7 @@ namespace Service.Models.HomePage
             public string cUrl { get; set; }
             public string cServiceName { get; set; }
 
-            public List<ListModel.ListItem> UrunListesi { get; set; }
+            public List<ListModel.ListItem> ProductList { get; set; }
 
             public class ListItem
             {
@@ -28,3 +28,5 @@ namespace Service.Models.HomePage
         }
     }
 }
+
+
