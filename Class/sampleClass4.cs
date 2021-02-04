@@ -55,21 +55,21 @@ namespace Service.Class.HomePage
                             {
                                 Models.HomePage.Service.ListModel ServiceListModel = new Models.HomePage.Service.ListModel();
 
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cPageImage))
                                 {
-                                    ServiceListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    ServiceListModel.cImage = resultPageList[i].cPageImage;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
                                     ServiceListModel.cTitle = resultPageList[i].cTitle;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cUrl))
                                 {
-                                    ServiceListModel.cUrl = resultPageList[i].cSeo;
+                                    ServiceListModel.cUrl = resultPageList[i].cUrl;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cDescription))
                                 {
-                                    ServiceListModel.cDescription = resultPageList[i].cPageDescription;
+                                    ServiceListModel.cDescription = resultPageList[i].cDescription;
                                 }
                                 service.listModel.Add(ServiceListModel);
                             }
