@@ -33,7 +33,6 @@
                             {
                                 if (Model.listModel[i] != null)
                                 {
-                                    <div class="image">
                                         @if (!String.IsNullOrEmpty(Model.listModel[i].cImage) && Model.listModel[i].cImage != "/Images/resimyok.png")
                                         {
                                             <div class="image position-relative" style="background-image:url(@Model.listModel[i].cImage.Replace("/Thumbnail", "").Replace(cResimOnEki, "ImagesStore"))">
@@ -45,7 +44,6 @@
                                                 }
                                             </div>
                                         }
-                                    </div>
                                 }
                             }
                         }
