@@ -42,7 +42,7 @@ namespace Service.Class.HomePage
                                           tableServiceList.iCodeWebSite == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]) &&
                                           tableServiceList.iParent == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeService"]) &&
                                           tableServiceList.iCodeModule == 10
-                                        select new Models.HomePage.Service15.List
+                                        select new Models.HomePage.Service.List
                                         {
                                             cServiceName = tableServiceList.cTitle,
                                             cServiceDescription = tableServiceList.cPageDescription,
@@ -56,13 +56,13 @@ namespace Service.Class.HomePage
                         {
                             for (int i = 0; i < service.list.Count; i++)
                             {
-                                service.list[i].UrunListesi = (from tableServiceList in dc.Pages
+                                service.list[i].ProductList = (from tableServiceList in dc.Pages
                                                                where
                                                                  tableServiceList.iActive == 1 &&
                                                                  tableServiceList.iCodeWebSite == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]) &&
                                                                  tableServiceList.iParent == (int)service.list[i].iCodePages &&
                                                                  tableServiceList.iCodeModule == 2
-                                                               select new Models.HomePage.Service15.List.ListItem
+                                                               select new Models.HomePage.Service.List.ListItem
                                                                {
                                                                    cServiceName = tableServiceList.cTitle,
                                                                    cServiceDescription = tableServiceList.cPageDescription,
@@ -70,6 +70,7 @@ namespace Service.Class.HomePage
                                                                    cURL = tableServiceList.cSeo,
                                                                    iOrder = (int)tableServiceList.iOrder
                                                                }).OrderBy(x => x.iOrder).ToList();
+                           
                             }
 
                         }
