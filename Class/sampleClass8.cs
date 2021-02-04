@@ -42,9 +42,9 @@ namespace News.Class.HomePage
                         {
                             news.cSubTitle = resultCustomers.cCustomerFooter;
                         }
-                        if (!String.IsNullOrEmpty(resultNews.cSeo))
+                        if (!String.IsNullOrEmpty(resultNews.cUrl))
                         {
-                            news.cUrl = resultNews.cSeo;
+                            news.cUrl = resultNews.cUrl;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cTitle))
                         {
@@ -56,7 +56,7 @@ namespace News.Class.HomePage
                                               table.iCodeWebSite == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]) &&
                                               table.iParent == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeNews"]) &&
                                               table.iActive == 1
-                                              select table).Skip(0).Take(3).OrderBy(x => x.iOrder).ToList();
+                                              select table).Skip(0).Take(2).OrderBy(x => x.iOrder).ToList();
 
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
@@ -66,9 +66,9 @@ namespace News.Class.HomePage
                             {
                                 Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cPageImage))
                                 {
-                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cPageImage;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
@@ -78,13 +78,13 @@ namespace News.Class.HomePage
                                 {
                                     newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cUrl))
                                 {
-                                    newsListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cUrl;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cDescription))
                                 {
-                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cDescription;
                                 }
 
                                 news.listModel.Add(newsListModel);
