@@ -31,9 +31,9 @@ namespace Service.Class.HomePage
                         {
                             service.cTitle = resultService.cTitle;
                         }
-                        if (resultService.cSeo != null)
+                        if (resultService.cUrl != null)
                         {
-                            service.cUrl = resultService.cSeo;
+                            service.cUrl = resultService.cUrl;
                         }
 
                         service.list = (from tableServiceList in dc.Pages
@@ -44,10 +44,10 @@ namespace Service.Class.HomePage
                                           tableServiceList.iCodeModule == 10
                                         select new Models.HomePage.Service.List
                                         {
-                                            cServiceName = tableServiceList.cTitle,
-                                            cServiceDescription = tableServiceList.cPageDescription,
-                                            cImagePad = tableServiceList.cSayfaResmi,
-                                            cURL = tableServiceList.cSeo,
+                                            cName = tableServiceList.cTitle,
+                                            cDescription = tableServiceList.cDescription,
+                                            cImagePad = tableServiceList.cPageImage,
+                                            cURL = tableServiceList.cUrl,
                                             iOrder = (int)tableServiceList.iOrder,
                                             iCodePages = tableServiceList.iCodePages
                                         }).OrderBy(x => x.iOrder).ToList();
@@ -64,10 +64,10 @@ namespace Service.Class.HomePage
                                                                  tableServiceList.iCodeModule == 2
                                                                select new Models.HomePage.Service.List.ListItem
                                                                {
-                                                                   cServiceName = tableServiceList.cTitle,
-                                                                   cServiceDescription = tableServiceList.cPageDescription,
-                                                                   cImagePad = tableServiceList.cSayfaResmi,
-                                                                   cURL = tableServiceList.cSeo,
+                                                                   cName = tableServiceList.cTitle,
+                                                                   cDescription = tableServiceList.cDescription,
+                                                                   cImagePad = tableServiceList.cPageImage,
+                                                                   cURL = tableServiceList.cUrl,
                                                                    iOrder = (int)tableServiceList.iOrder
                                                                }).OrderBy(x => x.iOrder).ToList();
                            
