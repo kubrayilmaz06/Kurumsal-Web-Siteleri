@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Service2.Class.HomePage
+namespace Service.Class.HomePage
 {
-    public class Service2
+    public class Service
     {
-        public Models.HomePage.Service2 Send()
+        public Models.HomePage.Service Send()
         {
             try
             {
-                Models.HomePage.Service2 service2 = new Models.HomePage.Service2();
+                Models.HomePage.Service service = new Models.HomePage.Service();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultCustomers = (from table in dc.Customers
