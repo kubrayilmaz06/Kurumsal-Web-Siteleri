@@ -36,19 +36,19 @@ namespace News.Class.HomePage
                                         tableBlog.iCodePages == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeBlog"])
                                       select tableBlog).FirstOrDefault();
 
-                    if (resultNews != null && resultNews != null)
+                    if (resultNews != null && resultBlog != null)
                     {
                         if (!String.IsNullOrEmpty(resultCustomers.cCustomerFooter))
                         {
-                            news25.cSubTitle = resultCustomers.cCustomerFooter;
+                            news.cSubTitle = resultCustomers.cCustomerFooter;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cSeo))
                         {
-                            news25.cUrl = resultNews.cSeo;
+                            news.cUrl = resultNews.cSeo;
                         }
                         if (!String.IsNullOrEmpty(resultNews.cTitle))
                         {
-                            news25.cTitle = resultNews.cTitle;
+                            news.cTitle = resultNews.cTitle;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -60,39 +60,39 @@ namespace News.Class.HomePage
 
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
-                            news25.listModel = new List<Models.HomePage.News25.ListModel>();
+                            news.listModel = new List<Models.HomePage.News.ListModel>();
 
                             for (int i = 0; i < resultPageList.Count; i++)
                             {
-                                Models.HomePage.News25.ListModel news25ListModel = new Models.HomePage.News25.ListModel();
+                                Models.HomePage.News.ListModel newsListModel = new Models.HomePage.News.ListModel();
 
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSayfaResmi))
                                 {
-                                    news25ListModel.cImage = resultPageList[i].cSayfaResmi;
+                                    newsListModel.cImage = resultPageList[i].cSayfaResmi;
                                 }
                                 if (resultPageList[i].dRecordDateTime != null)
                                 {
-                                    news25ListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
+                                    newsListModel.dNewDate = Convert.ToDateTime(resultPageList[i].dRecordDateTime);
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cTitle))
                                 {
-                                    news25ListModel.cTitle = resultPageList[i].cTitle;
+                                    newsListModel.cTitle = resultPageList[i].cTitle;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
                                 {
-                                    news25ListModel.cUrl = resultPageList[i].cSeo;
+                                    newsListModel.cUrl = resultPageList[i].cSeo;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
                                 {
-                                    news25ListModel.cDescription = resultPageList[i].cPageDescription;
+                                    newsListModel.cDescription = resultPageList[i].cPageDescription;
                                 }
 
-                                news25.listModel.Add(news25ListModel);
+                                news.listModel.Add(newsListModel);
                             }
                         }
                     }
                 }
-                return news25;
+                return news;
             }
             catch
             {
