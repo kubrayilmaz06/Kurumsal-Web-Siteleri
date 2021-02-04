@@ -20,8 +20,6 @@ namespace News.Models.HomePage
             public int iOkunma { get; set; }
             public string cKategori { get; set; }
             public DateTime dNewDate { get; set; }
-
         }
-
     }
 }
