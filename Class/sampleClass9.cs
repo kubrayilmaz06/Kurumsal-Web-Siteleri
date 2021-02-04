@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace News.Class.HomePage
 {
-    public class News24
+    public class News
     {
-        public Models.HomePage.News24 Send()
+        public Models.HomePage.News Send()
         {
             try
             {
-                Models.HomePage.News24 news24 = new Models.HomePage.News24();
+                Models.HomePage.News news = new Models.HomePage.News();
                 using (Data.DCContent dc = new Data.DCContent())
                 {
                     var resultNews = (from tableNews in dc.Pages
@@ -22,7 +22,7 @@ namespace News.Class.HomePage
                                         tableNews.iCodePages == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeNews"])
                                       select tableNews).FirstOrDefault();
 
-                    if (resultNews != null && resultNews != null)
+                    if (resultNews != null)
                     {
 
                         if (!String.IsNullOrEmpty(resultNews.cTitle))
