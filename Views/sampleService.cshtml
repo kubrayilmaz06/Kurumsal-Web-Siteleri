@@ -49,7 +49,7 @@
                                                 {
                                                     <p class="text-dark font-weight-normal mb-4">@Model.listModel[i].cDescription</p>
                                                 }
-                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cUrl) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
                                                 {
                                                     <a href="@Model.listModel[i].cUrl" class="hvr-sweep-to-right btn btn-light rounded-0" title="@Model.listModel[i].cTitle">Devamını Oku</a>
                                                 }
@@ -74,7 +74,7 @@
                                                 {
                                                     <p class="text-dark font-weight-normal mb-4">@Model.listModel[i].cDescription</p>
                                                 }
-                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cDescription) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
+                                                @if (!String.IsNullOrEmpty(Model.listModel[i].cUrl) && !String.IsNullOrEmpty(Model.listModel[i].cTitle))
                                                 {
                                                     <a href="@Model.listModel[i].cUrl" class="hvr-sweep-to-left btn btn-light rounded-0" title="@Model.listModel[i].cTitle">Devamını Oku</a>
                                                 }
