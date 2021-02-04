@@ -37,13 +37,13 @@ namespace Service.Class.HomePage
                         {
                             service.cTitle = resultPage.cTitle;
                         }
-                        if (!String.IsNullOrEmpty(resultPage.cPageDescription))
+                        if (!String.IsNullOrEmpty(resultPage.cDescription))
                         {
-                            service.cDescription = resultPage.cPageDescription;
+                            service.cDescription = resultPage.cDescription;
                         }
-                        if (!String.IsNullOrEmpty(resultPage.cSeo))
+                        if (!String.IsNullOrEmpty(resultPage.cUrl))
                         {
-                            service.cUrl = resultPage.cSeo;
+                            service.cUrl = resultPage.cUrl;
                         }
 
                         var resultPageList = (from table in dc.Pages
@@ -51,7 +51,7 @@ namespace Service.Class.HomePage
                                               table.iCodeWebSite == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeWebSite"]) &&
                                               table.iParent == Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["iCodeService"]) &&
                                               table.iActive == 1
-                                              select table).Skip(0).Take(3).OrderBy(x => x.iOrder).ToList();
+                                              select table).Skip(0).Take(4).OrderBy(x => x.iOrder).ToList();
                         if (resultPageList != null && resultPageList.Count > 0)
                         {
                             service.listModel = new List<Models.HomePage.Service.ListModel>();
@@ -64,13 +64,13 @@ namespace Service.Class.HomePage
                                 {
                                     ServiceListModel.cTitle = resultPageList[i].cTitle;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cPageDescription))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cDescription))
                                 {
-                                    ServiceListModel.cDescription = resultPageList[i].cPageDescription;
+                                    ServiceListModel.cDescription = resultPageList[i].cDescription;
                                 }
-                                if (!String.IsNullOrEmpty(resultPageList[i].cSeo))
+                                if (!String.IsNullOrEmpty(resultPageList[i].cUrl))
                                 {
-                                    ServiceListModel.cUrl = resultPageList[i].cSeo;
+                                    ServiceListModel.cUrl = resultPageList[i].cUrl;
                                 }
                                 if (!String.IsNullOrEmpty(resultPageList[i].cIcon))
                                 {
